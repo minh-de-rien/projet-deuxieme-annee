@@ -26,7 +26,7 @@ Le jeu propose une expérience de jeu en solo ou en duo, avec deux modes de jeu 
 
 ![Image montrant la page d'accueil](https://github.com/minh-de-rien/projet-deuxieme-annee/blob/main/readme/page-accueil.png)
 
-La page d'accueil du site web est la première interface visible par l'utilisateur lorsqu'il accède au site. Elle offre aux joueurs une orientation vers le contenu souhaité, en utilisant des boutons tels que *Mode Classique*, *Mode temps limité* et *Administration*. Ces boutons facilitent la navigation et l'accès aux fonctionnalités du site, permettant aux joueurs de découvrir rapidement les modes de jeu disponibles et les options de personnalisation.
+La page d'accueil du site web est la première interface visible par l'utilisateur lorsqu'il accède au site. Elle oriente les joueurs vers le contenu souhaité, en utilisant des boutons tels que *Mode Classique*, *Mode temps limité* et *Administration*. Ces boutons facilitent la navigation et l'accès aux fonctionnalités du site, permettant aux joueurs de découvrir rapidement les modes de jeu disponibles et les options de personnalisation.
 
 ## Mode classique
 
