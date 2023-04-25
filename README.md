@@ -7,8 +7,8 @@ Projet de logiciel d'application Web
 [Nils Coulier](https://github.com/Ohdrak)  
 [Minh Ngoc Do](https://github.com/minh-de-rien)  
 [Jolan Le Clainche](https://github.com/JolanLec)  
-[Juliette Mathivet](https://github.com/Juliette-Mathivet)
-[Kevin Peymani](https://github.com/KevinPeymani) 
+[Juliette Mathivet](https://github.com/Juliette-Mathivet)  
+[Kevin Peymani](https://github.com/KevinPeymani)  
 [Nemro Yapmi Nji Monluh]
 
 ---
@@ -48,12 +48,15 @@ La vue d'administration, présentée de manière similaire à la vue de sélecti
 
 ## Outils de développement
 
--   client : le site Web fait avec le cadriciel(_framework_) **Angular**.
--   serveur : le serveur dynamique bâti avec la librairie **NestJs**.
+-   Client : le site Web fait avec le cadriciel(_framework_) **Angular**.
+-   Serveur : le serveur dynamique bâti avec la librairie **NestJs**.
+
+-   SGDB : les données du jeu sont hébergées sur la base de données **MongoDB**.
+-   Déploiement : Utilisation des services **GitLab Pages** et **AWS**.
 
 ### Tests unitaires et couverture de code
 
-Les tests se retrouvent dans les fichiers `*.spec.ts` dans le code source des deux projets. Le client utilise la librairie _Jasmine_ et le serveur utilise _Mocha_,_Chai_, _Sinon_ et _Supertest_.
+Les tests se retrouvent dans les fichiers `*.spec.ts` dans le code source des deux projets. Le client utilise la librairie _Jasmine_ et le serveur utilise _Mocha_, _Chai_, _Sinon_ et _Supertest_.
 
 ### Linter et assurance qualité
 
@@ -66,3 +69,7 @@ Ce projet a initialement été développé sur la plateforme GitLab et une confi
 Cette configuration permet de lancer un pipeline de validations sur le projet en 4 étapes dans l'ordre suivant: _install_, _lint_, _build_ et _test_. Si une de ses étapes échoue, le pipeline est marqué comme échouée et une notification est visible sur GitLab.
 
 Le pipeline est lancé suite aux 2 actions suivantes : lors d'un commit sur la branche master ou dans le cas d'une Merge Request (MR) entre 2 branches. Dans le cas d'une MR, chaque nouveau commit lancera un nouveau pipeline de validation.
+
+---
+Équipe 103  
+5 décembre 2022
