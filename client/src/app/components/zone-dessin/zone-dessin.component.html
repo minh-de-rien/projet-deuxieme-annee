@@ -1,0 +1,12 @@
+<canvas
+    id="canvasDessin"
+    class="canvasAvantPlan"
+    #canvasDessin
+    (click)="sourisClique($event)"
+    (mousedown)="sourisEnfoncee($event)"
+    (mousemove)="sourisBouge($event)"
+    (mouseenter)="sourisDansCanvas()"
+    (mouseleave)="sourisHorsCanvas()"
+    [attr.width]="largeur"
+    [attr.height]="hauteur"
+></canvas>

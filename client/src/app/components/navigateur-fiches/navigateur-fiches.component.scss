@@ -1,0 +1,54 @@
+main {
+    display: flex;
+    min-width: 100%;
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    button.fleche {
+        flex-grow: 0.2;
+        justify-content: center;
+        display: flex;
+        width: 10%;
+        color: aliceblue;
+    }
+    .bouton-icone:hover {
+        cursor: pointer;
+        color: #ff2079;
+    }
+    .inactif {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 1000px) {
+    .fiches-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+@media (min-width: 1001px) {
+    .fiches-container {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: 80%;
+        height: 100%;
+        .fiche {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media (max-height: 720px) {
+    .page-entiere {
+        height: 90vh;
+    }
+}
+@media (min-height: 721px) {
+    .page-entiere {
+        height: 100vh;
+    }
+}

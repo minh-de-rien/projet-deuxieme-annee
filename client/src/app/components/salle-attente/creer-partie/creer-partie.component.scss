@@ -1,0 +1,51 @@
+
+.center { 
+    height: 200px;
+    position: relative;
+    border: 3px solid rgb(70, 200, 255); 
+  }
+  
+  .center p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+} 
+h1 {
+  color: rgb(255, 255, 255);
+}
+p {
+  color: rgb(255, 255, 255);
+}
+
+/*
+.item-a {
+  grid-area: header;
+}
+.item-b {
+  grid-area: main;
+}
+.item-c {
+  grid-area: sidebar;
+}
+.item-d {
+  grid-area: footer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50px 50px 50px 50px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer";
+}
+*/

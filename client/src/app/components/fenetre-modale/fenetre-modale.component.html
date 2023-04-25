@@ -1,0 +1,14 @@
+<div class="modale-conteneur">
+    <header class="modale-en-tete">
+        <h1 class="modal-titre">{{ donneeModale.titre }}</h1>
+    </header>
+    <section class="modale-contenu">
+        <p>{{ donneeModale.description }}</p>
+    </section>
+    <footer class="boutons-retour-action">
+        <button *ngIf="necessiteBoutonRetour" mat-raised-button class="bouton-retour" (click)="fermerModale()">Retour</button>
+        <button mat-raised-button class="bouton-action" (click)="actionModale()">
+            {{ donneeModale.boutonActionTexte }}
+        </button>
+    </footer>
+</div>

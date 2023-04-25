@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Bonjour</h1>
+<div mat-dialog-content>
+    <p>Quel est votre nom?</p>
+    <mat-form-field appearance="fill">
+        <mat-label>votre nom</mat-label>
+        <input autofocus (keydown.enter)="envoi.click()" matInput [(ngModel)]="donnee.nomJoueur" />
+    </mat-form-field>
+</div>
+<div mat-dialog-actions class="boutons-retour-action">
+    <button class="bouton-retour" mat-raised-button type="button" [mat-dialog-close]="null">Retour</button>
+    <button class="bouton-action" type="button" #envoi [mat-dialog-close]="donnee">Entrer</button>
+</div>

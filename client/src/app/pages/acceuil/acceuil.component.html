@@ -1,0 +1,23 @@
+<div class="container" style="background-image: url('./assets/img/background.png')">
+    <div class="flex-box-admin">
+        <img src="./assets/img/logo.png" alt="Logo du site" class="logo" />
+        <button class="bouton-accueil bouton-admin" routerLink="/admin" (mousedown)="audioService.jouerSonClic()">ADMINISTRATION</button>
+    </div>
+
+    <div class="titre-accueil">Pick Pixel</div>
+
+    <div class="justified-buttons">
+        <button class="bouton-accueil" id="boutonModeClassique" routerLink="/classique" (mousedown)="audioService.jouerSonClic()">
+            MODE CLASSIQUE
+        </button>
+        <button class="bouton-accueil" routerLink="/limite">MODE TEMPS LIMITÉ</button>
+    </div>
+
+    <footer class="footer-item">
+        <h4 class="team-name">Équipe 103</h4>
+        <p>
+            <span>Nemro Yapmi Nji Monluh, </span>, <span>Juliette Mathivet, </span>, <span>Kevin Peymani, </span>, <span>Minh Ngoc Do, </span>,
+            <span>Nils Coulier, </span>, <span>Jolan Le Clainche-Vernaudon</span>
+        </p>
+    </footer>
+</div>

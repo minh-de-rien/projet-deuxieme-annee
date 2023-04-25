@@ -1,0 +1,23 @@
+.modale-conteneur {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.6rem 3rem;
+    border: 3px solid black;
+    border-radius: 5px;
+
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+    // background: #c9688f;
+    // background: linear-gradient(to right, #c9688f, #ee9ca7, #ffdde1);
+}
+
+.modale-en-tete {
+    font-size: 22px;
+    color: #ff2079;
+}
+
+.modale-contenu {
+    font-size: 1.1rem;
+    margin-bottom: 1.6rem;
+    margin-top: 0;
+}

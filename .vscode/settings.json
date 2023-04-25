@@ -1,0 +1,28 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true
+    },
+    "html.format.indentInnerHtml": true,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+    "eslint.workingDirectories": ["./client", "./server"],
+    "eslint.probe": ["javascript", "typescript", "html", "vue", "markdown"],
+    "eslint.validate": ["javascript", "typescript", "html", "vue", "markdown"],
+    "files.eol": "\n",
+    "[scss]": {
+        "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "ms-vsliveshare.vsliveshare"
+    },
+    "cSpell.words": [
+        "Enfoncee",
+        "joueur",
+        "Regroupements"
+    ],
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

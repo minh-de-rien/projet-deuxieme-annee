@@ -1,0 +1,18 @@
+<div class="center">
+    <div *ngIf="!aRejoint">
+        <br />
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar><br /><br /><br />
+        <marquee><h1>Veuillez patienter pendant qu'un joueur vous rejoigne.</h1></marquee>
+        <br /><br /><br />
+        <button mat-raised-button color="warn" (click)="salleAttenteService.retourArriere(0)">Quitter La Salle</button>
+    </div>
+    <div *ngIf="aRejoint">
+        <p>{{ nomInvite | titlecase }}, veut vous rejoindre!</p>
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" (click)="demarrerPartie()">Accepter</button>
+            <button mat-raised-button color="warn" (click)="rejeterJoueur()">Rejeter</button>
+        </div>
+        <br /><br /><br />
+        <button mat-raised-button color="warn" (click)="salleAttenteService.retourArriere(0)">Quitter La Salle</button>
+    </div>
+</div>

@@ -1,0 +1,272 @@
+@media (max-height: 600px) {
+    .vue-creation-de-jeu {
+        height: 88vh;
+    }
+}
+@media (min-height: 601px) {
+    .vue-creation-de-jeu {
+        height: 90vh;
+    }
+    .zone-btn-haut, .zone-centrale, .zone-btn-bas {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+}
+p, label, select {
+    margin-bottom: 0;
+    font-family: raleway;
+    font-size: medium;
+}
+button:not(.bouton-icone) {
+    font-size: medium;
+    height: 35px;
+    align-items: center;
+}
+#imgOriginale, #imgModifiee {
+    position: absolute; 
+    z-index: 0;
+    width: 640px;
+    height: 480px;
+}
+#televersement-image-originale, #televersement-image-modifiee {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    label {
+        display: flex;
+        justify-content: center;
+    }
+}
+#televersement-deux-zones {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.zone-televersement {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.texte-explication-televersement {
+    display: none;
+}
+.bouton-televersement:hover + .texte-explication-televersement {
+    display: block;
+}
+input {
+    color: transparent;
+    position: absolute;
+    left: 0;
+}
+.icone-reinitialisation {
+    margin: 0;
+    align-items: center;
+}
+.bouton-reinitialisation {
+    display: flex;
+    align-items: center;
+}
+.bouton-palette {
+    cursor: default;
+}
+
+.zoneDessin {
+    position: absolute;
+    width: 640px;
+    height: 480px;
+}
+.vue-creation-de-jeu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.zone-btn-haut {
+    margin-left: 4%;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+.zone-centrale {
+    display: flex;
+    justify-content: space-between;
+    border-style: solid;
+    border-color: #fff;
+    border-radius: 25px;
+    
+    .zone-image {
+        margin-top: 1%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: aliceblue;
+        
+        h2 {
+            font-family: raleway;
+            font-size: 23px;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        .rectangle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 640px;
+            height: 480px;
+            position: relative;
+        }
+    }
+    .zone-image > p {
+        text-align: center;
+    }
+    .zone-image-gauche {
+        margin-left: 2%;
+    }
+    .zone-image-droite {
+        margin-right: 2%;
+    }
+    .zone-modification-image {
+        margin-bottom: 5%;
+    }
+}
+.bouton-gestion-dessin {
+    margin-top: 12.5px;
+    display: flex;
+    justify-content: space-between;
+}
+.zone-btn-bas {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .btn-bas {
+        margin-right: 0.5%;
+    }
+}
+.message-aide {
+    position: relative;
+    display: block;
+    .texte-message-aide {
+        visibility: hidden;
+        width: 425px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+        bottom: 150%;
+        left: 50%;
+        margin-left: -235px;
+        position: absolute;
+        z-index: 1;
+    }
+}
+.fenetre-modale-wrapper {
+    display: none;
+}
+.fenetre-modale {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+}
+.fenetre-modale-corps {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: #fff;
+    margin: 40px;
+    width: 800px;
+    height: 600px;
+}
+.fenetre-modale-arriere-plan  {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.75;
+    z-index: 900;
+}
+
+p,
+label,
+form {
+    color: aliceblue;
+}
+p.nb-diff {
+    color: #000;
+}
+
+.outilsDessin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .outils-modification-dessin {
+        padding: 7px 5px 5px 5px;
+        margin: 5px;
+        width: 164px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-style: solid;
+        border-color: #fff;
+        border-radius: 25px;
+    }
+    .annuler-refaire {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .bouton-annuler {
+            margin-right: 10px;
+        }
+        .bouton-refaire {
+            margin-left: 10px;
+        }
+    }
+    .actif {
+        color: #ff2079;
+        filter: brightness(0) saturate(100%) invert(23%) sepia(84%) saturate(3110%) hue-rotate(322deg) brightness(101%) contrast(101%);
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .mat-slider {
+        transform: scale(0.8);
+    }
+    ::ng-deep .mat-slider-thumb {
+        background-color: aliceblue !important;
+    }
+    ::ng-deep .mat-slider-track-background {
+        background-color: aliceblue !important;
+    }
+}
+
+// Le code ci-dessous a été tiré de
+// https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting
+.aucuneSelectionText {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}

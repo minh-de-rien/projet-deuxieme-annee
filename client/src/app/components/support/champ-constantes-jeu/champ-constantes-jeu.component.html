@@ -1,0 +1,121 @@
+<header>
+    <h1>{{ messageConfigTemps.Titre }}</h1>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Description des constantes</mat-panel-title>
+            <mat-panel-description>{{ messageConfigTemps.SousTitre }}</mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>
+            <b>{{ messageConfigTemps.TitreTempsCompteARebours }}</b>
+        </p>
+        <p>{{ messageConfigTemps.DescriptionTempsCompteARebours }}</p>
+        <p>
+            <b>{{ messageConfigTemps.TitreTempsPenalite }}</b>
+        </p>
+        <p>{{ messageConfigTemps.DescriptionTempsPenalite }}</p>
+        <p>
+            <b>{{ messageConfigTemps.TitreTempsGain }}</b>
+        </p>
+        <p>{{ messageConfigTemps.DescriptionTempsGain }}</p>
+    </mat-expansion-panel>
+</header>
+
+<mat-nav-list>
+    <form [formGroup]="formulaire" (ngSubmit)="verifierLaValiditeDesValeursDuFormulaire()" class="form">
+        <table>
+            <thead>
+                <tr>
+                    <th>Temps du compte à rebours</th>
+                    <th>Temps de pénalité pour l’utilisation d’un indice</th>
+                    <th>Temps gagné avec la découverte d’une différence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input
+                                matInput
+                                formControlName="tempsCompteARebours"
+                                placeholder="30"
+                                type="number"
+                                min="5"
+                                max="120"
+                                value="{{ tempsJeux.compteARebours }}"
+                                onClick="this.select()"
+                            />
+                            <mat-hint>secondes</mat-hint>
+                        </mat-form-field>
+                    </td>
+
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input
+                                matInput
+                                formControlName="tempsPenalite"
+                                placeholder="5"
+                                type="number"
+                                min="5"
+                                max="30"
+                                value="{{ tempsJeux.penalite }}"
+                                onClick="this.select()"
+                            />
+                            <mat-hint>secondes</mat-hint>
+                        </mat-form-field>
+                    </td>
+
+                    <td>
+                        <mat-form-field appearance="outline">
+                            <input
+                                matInput
+                                formControlName="tempsGain"
+                                placeholder="5"
+                                type="number"
+                                min="5"
+                                max="30"
+                                value="{{ tempsJeux.gain }}"
+                                onClick="this.select()"
+                            />
+                            <mat-hint>secondes</mat-hint>
+                        </mat-form-field>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td
+                        [ngClass]="{
+                            alerteVisible: formulaire.controls['tempsCompteARebours'].invalid,
+                            alerteInvisible: formulaire.controls['tempsCompteARebours'].valid
+                        }"
+                    >
+                        Veuillez entrer un nombre entre 5 et 60
+                    </td>
+                    <td
+                        [ngClass]="{
+                            alerteVisible: formulaire.controls['tempsPenalite'].invalid,
+                            alerteInvisible: formulaire.controls['tempsPenalite'].valid
+                        }"
+                    >
+                        Veuillez entrer un nombre entre 5 et 30
+                    </td>
+                    <td
+                        [ngClass]="{
+                            alerteVisible: formulaire.controls['tempsGain'].invalid,
+                            alerteInvisible: formulaire.controls['tempsGain'].valid
+                        }"
+                    >
+                        Veuillez entrer un nombre en 5 et 30
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="boutons-retour-action">
+            <button mat-raised-button class="bouton-action" type="button" (click)="reinitialiserConstantes()">Réinitialiser</button>
+            <button mat-raised-button class="bouton-action" type="submit">Sauvegarder</button>
+        </div>
+    </form>
+</mat-nav-list>
+
+<footer class="boutons-retour-action">
+    <button mat-raised-button class="bouton-retour" (click)="fermerChampBasFenetre($event)">Retour</button>
+</footer>

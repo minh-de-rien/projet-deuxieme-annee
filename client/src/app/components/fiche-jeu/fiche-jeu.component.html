@@ -1,0 +1,57 @@
+<div *ngIf="jeu !== undefined" class="fiche">
+    <h1 class="titre">{{ jeu.nom }}</h1>
+    <div class="flex-div">
+        <div class="boxImg">
+            <img [src]="this.lienImageOriginale" loading="lazy" />
+        </div>
+        <div class="infos">
+            <p class="annonceScore">Meilleurs temps</p>
+            <div class="ficheScore">
+                <div>
+                    <br />
+                    <p>1</p>
+                    <p>2</p>
+                    <p>3</p>
+                </div>
+                <div>
+                    <p class="mode-jeu">Solo</p>
+                    <p *ngFor="let score of jeu.meilleursTempsSolo">{{ score.nomJoueur }}, {{ convertirSecondesEnMinutesSeconde(score.temps) }}</p>
+                </div>
+                <div>
+                    <p class="mode-jeu">1v1</p>
+                    <p *ngFor="let score of jeu.meilleursTemps1v1">{{ score.nomJoueur }}, {{ convertirSecondesEnMinutesSeconde(score.temps) }}</p>
+                </div>
+            </div>
+            <div *ngIf="!isAdministration" class="flexSpaceAround">
+                <button class="bouton-fiche-jeu" (click)="ouvrirBoiteDialogue(true)" (mousedown)="audioService.jouerSonClic()">
+                    <b>Jouer</b><br />
+                    en solo
+                </button>
+                <button
+                    class="bouton-fiche-jeu"
+                    #boutonCreer
+                    *ngIf="!jeu.aCree"
+                    (click)="ouvrirBoiteDialogue(false)"
+                    (mousedown)="audioService.jouerSonClic()"
+                >
+                    <b>Créer</b><br />
+                    une partie à deux
+                </button>
+                <button class="bouton-fiche-jeu" *ngIf="jeu.aCree" (click)="ouvrirBoiteDialogue(false)" (mousedown)="audioService.jouerSonClic()">
+                    <b>Joindre</b><br />
+                    une partie à deux
+                </button>
+            </div>
+            <div *ngIf="isAdministration" class="flexSpaceAround">
+                <button class="bouton-fiche-jeu" (click)="supprimerJeu()" (mousedown)="audioService.jouerSonClic()">
+                    <b>Supprimer</b><br />
+                    le jeu
+                </button>
+                <button class="bouton-fiche-jeu" (click)="reinitialiserScore()" (mousedown)="audioService.jouerSonClic()">
+                    <b>Réinitialiser</b><br />
+                    les meilleurs temps
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

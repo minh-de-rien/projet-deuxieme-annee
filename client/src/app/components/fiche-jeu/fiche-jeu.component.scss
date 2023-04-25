@@ -1,0 +1,110 @@
+.fiche {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2);
+    padding-left: 2%;
+    padding-right: 2%;
+
+    &:hover {
+        background-image: linear-gradient(to bottom, #1E022E, #580244, #FA0284);
+    }
+}
+
+.boxImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    img {
+        width: 90%;
+        height: 90%;
+        background-color: white;
+    }
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+.infos {
+    display:flex;
+    flex-direction: column;
+    align-content: flex-end;
+    width: 100%;
+    height: 100%;
+    font-family: raleway;
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: white;
+        &.annonceScore{
+            display: flex;
+            justify-content: center;
+            padding-top: 15px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+    }
+
+    .ficheScore{
+        display: grid;
+        grid-template-columns: 10% 45% 45%;
+        padding-top: 10px;
+        font-size: 13px;
+        font-weight: 400;
+    }
+}
+
+.mode-jeu{
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2.5px;
+}
+    
+.titre{
+    font-family: lazer84;
+    text-shadow: 1px 1px 1px black;
+    font-size: 30px;
+    font-weight: 200;
+    color: #fff;
+    letter-spacing: 0.1em;
+    padding-top: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.flexSpaceAround{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.bouton-fiche-jeu{
+    background-color: #25a2f6;
+    box-shadow: 0px 0px 15px #75beef;
+    border: 1.6px solid #5ebfff;
+    color: white;
+    padding: 5px 5px;
+    width: 43%;
+}
+
+.bouton-fiche-jeu:hover{
+    background-color: #ff2079;
+    color: white;
+    box-shadow: 0px 0px 40px #ff2079;
+    transition: 500ms;
+    border: 1.6px solid #edc9d7;
+    transition-duration: 300ms;
+}
+
+.flex-div{
+    display: flex;
+    padding-bottom: 10px
+}
+
+.dialog-class{
+    background-color: gray;
+}

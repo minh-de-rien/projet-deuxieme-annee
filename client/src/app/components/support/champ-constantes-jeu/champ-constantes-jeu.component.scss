@@ -1,0 +1,55 @@
+mat-form-field, mat-label {
+    color: black;
+}
+
+mat-panel-title {
+    text-align: center;
+}
+
+h1 {
+    color: #ff2079;
+}
+
+th {
+    size: 20px;
+    font-size: 20px;
+}
+
+h1, th, td, p, mat-panel-title, mat-panel-description {
+    text-align: center;
+    font-family: raleway;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+
+    padding: 30px 5px 5px 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    border-style: solid;
+    border-color: black;
+    border-radius: 25px;
+}
+
+.alerteVisible {
+    color: red;
+    visibility: visible;
+}
+
+.alerteInvisible {
+    visibility: hidden;
+}
+
+.boutons-retour-action {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.bouton-retour, .bouton-action, mat-panel-title, mat-panel-description {
+    font-size: 15px;
+}

@@ -1,0 +1,17 @@
+<div class="center">
+    <div *ngIf="!aRejete">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        <br />
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar><br /><br /><br />
+        <marquee><h1>Veuillez patienter pendant que le joueur hote vous autorise a le joindre..</h1></marquee>
+        <br /><br /><br />
+        <div class="example-button-row">
+            <button mat-raised-button color="warn" (click)="salleAttenteService.retourArriere(0)">Annuler et Retour</button>
+        </div>
+    </div>
+
+    <div *ngIf="aRejete" class="texteJoueurRejete">
+        <div>{{ nomHote | uppercase }}> , a refusé de jouer avec vous...</div>
+        <div>Vous serez redirigé en arrière dans 03 secondes</div>
+    </div>
+</div>

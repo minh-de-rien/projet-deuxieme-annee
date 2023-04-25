@@ -1,0 +1,6 @@
+<div class="horloge">
+    <p *ngIf="tempsMinutes < 10">0</p>
+    <p>{{ tempsMinutes }} :&nbsp;</p>
+    <p *ngIf="tempsSecondes < 10">0</p>
+    <p>{{ tempsSecondes }}</p>
+</div>

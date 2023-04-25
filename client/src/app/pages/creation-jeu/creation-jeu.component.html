@@ -1,0 +1,217 @@
+<app-barre-navigation titreDePage="Créez votre jeu de différence!"></app-barre-navigation>
+<br />
+<body class="vue-creation-de-jeu" [ngClass]="{ aucuneSelectionText: unBoutonOutilEstActif() }">
+    <div>
+        <div class="zone-btn-haut">
+            <form id="televersement-deux-zones" #formulaireDeuxZones>
+                <div class="zone-televersement">
+                    <button
+                        id="bouton-televersement-deux-zones"
+                        class="material-icons bouton-icone bouton-televersement md-18"
+                        onclick="document.getElementById('input-deux-zones').click()"
+                    >
+                        upload_file
+                    </button>
+                    <p class="texte-explication-televersement">Téléverser la même image dans chaque zone (.bmp, 640x480, 24bpp)</p>
+                </div>
+                <input
+                    type="file"
+                    id="input-deux-zones"
+                    name="input-deux-zones"
+                    style="visibility: hidden"
+                    accept="image/bmp"
+                    (input)="televersement($event)"
+                />
+                <button class="bouton-reinitialisation" type="reset" name="bouton-reinitialisation-deux-zones" (click)="reinitialisation($event)">
+                    Réinitialiser les deux images de fond
+                    <span class="material-icons md-18 icone-reinitialisation">refresh</span>
+                </button>
+            </form>
+        </div>
+        <div class="zone-centrale">
+            <div class="zone-image zone-image-gauche">
+                <h2>Image originale</h2>
+                <div class="zone-modification-image">
+                    <form id="televersement-image-originale" #formulaireOriginal>
+                        <div>
+                            <div class="zone-televersement">
+                                <button
+                                    id="bouton-televersement-original"
+                                    class="material-icons bouton-icone bouton-televersement md-18"
+                                    onclick="document.getElementById('input-zone-originale').click()"
+                                >
+                                    upload_file
+                                </button>
+                                <p class="texte-explication-televersement">Téléverser une image (.bmp, 640x480, 24bpp)</p>
+                            </div>
+                            <input
+                                type="file"
+                                id="input-zone-originale"
+                                name="input-zone-originale"
+                                style="visibility: hidden"
+                                accept="image/bmp"
+                                (input)="televersement($event)"
+                            />
+                        </div>
+                        <button
+                            class="bouton-reinitialisation"
+                            type="reset"
+                            name="bouton-reinitialisation-img-originale"
+                            (click)="reinitialisation($event)"
+                        >
+                            Réinitialiser l'image de fond
+                            <span class="material-icons md-18 icone-reinitialisation">refresh</span>
+                        </button>
+                    </form>
+                    <div class="rectangle" id="espaceImage1">
+                        <canvas id="imgOriginale" #imgOriginale [attr.width]="largeur" [attr.height]="hauteur"></canvas>
+                        <app-zone-dessin [statut]="canvasDessinOriginal" class="zoneDessin"></app-zone-dessin>
+                    </div>
+                    <div class="bouton-gestion-dessin">
+                        <button name="bouton-reinitialisation-avant-plan-originale" (click)="reinitialisationAvantPlan($event)">
+                            Réinitialiser les modifications
+                        </button>
+                        <button name="bouton-duplication-avant-plan-originale" (click)="duplicationAvantPlan($event)">
+                            Dupliquer les modifications
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="outilsDessin">
+                <div class="outils-modification-dessin">
+                    <button
+                        class="material-icons bouton-icone outil"
+                        (click)="changerOutil('crayon')"
+                        [ngClass]="{ actif: etatBoutonOutil.get('crayon') }"
+                    >
+                        brush
+                    </button>
+                    <mat-slider
+                        *ngIf="etatBoutonOutil.get('crayon')"
+                        (change)="etablirEpaisseurOutil($event)"
+                        step="5"
+                        min="1"
+                        max="30"
+                        thumbLabel
+                    ></mat-slider>
+
+                    <button class="bouton-icone outil" (click)="changerOutil('efface')" [ngClass]="{ actif: etatBoutonOutil.get('efface') }">
+                        <img src="./assets/img/eraser.png" />
+                    </button>
+                    <mat-slider
+                        *ngIf="etatBoutonOutil.get('efface')"
+                        (change)="etablirEpaisseurOutil($event)"
+                        step="5"
+                        min="1"
+                        max="30"
+                        thumbLabel
+                    ></mat-slider>
+                    <p>Outils de dessin</p>
+                </div>
+                <div class="outils-modification-dessin">
+                    <button class="material-icons bouton-icone bouton-palette outil" #boutonPalette>palette</button>
+                    <app-palette-couleur class="outil"></app-palette-couleur>
+                    <p>Couleur</p>
+                </div>
+                <div class="outils-modification-dessin">
+                    <button class="material-icons bouton-icone" (click)="intervertionAvantPlan()">sync_alt</button>
+                    <p>Intervertir les dessins</p>
+                </div>
+                <div class="outils-modification-dessin">
+                    <div class="annuler-refaire">
+                        <button class="material-icons bouton-icone bouton-annuler" (click)="annuler()">undo</button>
+                        <button class="material-icons bouton-icone bouton-refaire" (click)="refaire()">redo</button>
+                    </div>
+                    <p>Annuler-refaire</p>
+                </div>
+            </div>
+            <div class="zone-image zone-image-droite">
+                <h2>Image différente</h2>
+                <div class="zone-modification-image">
+                    <form id="televersement-image-modifiee" #formulaireModifiee>
+                        <div>
+                            <div class="zone-televersement">
+                                <button
+                                    id="bouton-televersement-modifie"
+                                    class="material-icons bouton-icone bouton-televersement md-18"
+                                    onclick="document.getElementById('input-zone-modifiee').click()"
+                                >
+                                    upload_file
+                                </button>
+                                <p class="texte-explication-televersement">Téléverser une image (.bmp, 640x480, 24bpp)</p>
+                            </div>
+                            <input
+                                type="file"
+                                id="input-zone-modifiee"
+                                name="input-zone-modifiee"
+                                style="visibility: hidden"
+                                accept="image/bmp"
+                                (input)="televersement($event)"
+                            />
+                        </div>
+                        <button
+                            class="bouton-reinitialisation"
+                            type="reset"
+                            name="bouton-reinitialisation-img-modifiee"
+                            (click)="reinitialisation($event)"
+                        >
+                            Réinitialiser l'image de fond
+                            <span class="material-icons md-18 icone-reinitialisation">refresh</span>
+                        </button>
+                    </form>
+                    <div class="rectangle" id="espaceImage2">
+                        <canvas id="imgModifiee" #imgModifiee [attr.width]="largeur" [attr.height]="hauteur"></canvas>
+                        <app-zone-dessin [statut]="canvasDessinModifie" class="zoneDessin"></app-zone-dessin>
+                    </div>
+                    <div class="bouton-gestion-dessin">
+                        <button name="bouton-reinitialisation-avant-plan-modifie" (click)="reinitialisationAvantPlan($event)">
+                            Réinitialiser les modifications
+                        </button>
+                        <button name="bouton-duplication-avant-plan-modifie" (click)="duplicationAvantPlan($event)">
+                            Dupliquer les modifications
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zone-btn-bas">
+        <form class="btn-bas">
+            <label for="rayon">Établir le degré de précision requis pour trouver une différence : </label>
+            <select id="rayon" name="rayon" #rayonElargissement>
+                <option value="0">0 pixel (très précis)</option>
+                <option value="3" selected>3 pixel (précis)</option>
+                <option value="9">9 pixel (peu précis)</option>
+                <option value="15">15 pixel (très peu précis)</option>
+            </select>
+        </form>
+        <button
+            class="btn-bas message-aide"
+            (mouseenter)="apparitionTexteInformation()"
+            (mouseleave)="enleverTexteInformation()"
+            (click)="validation()"
+            (mousedown)="audioService.jouerSonClic()"
+        >
+            Visualiser les différences
+            <span class="texte-message-aide" #texteInformation>Pour être valide, les 2 images doivent avoir entre 3 et 9 différences</span>
+        </button>
+        <button class="btn-bas" (mouseenter)="apparitionTexteInformation()" (mouseleave)="enleverTexteInformation()" (click)="enregistrement()">
+            Sauvegarder
+        </button>
+    </div>
+    <div class="fenetre-modale-wrapper" id="fenetre-modale-wrapper" #fenetreModaleWrapper>
+        <div class="fenetre-modale">
+            <div class="fenetre-modale-corps">
+                <div>
+                    <canvas id="imgDifference" #imgDifference width="640" height="480"></canvas>
+                    <div class="boutons-retour-action">
+                        <p class="nb-diff">{{ nbrDifference }} différences trouvées</p>
+                        <button mat-raised-button class="bouton-action" (click)="fermeFenetre()" (mousedown)="audioService.jouerSonClic()">
+                            Fermer la fenêtre
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,96 @@
+@use '@angular/material' as mat;
+@use './app/pages/material-page/material-page.component.theme' as material-page;
+@font-face {
+    font-family: raleway;
+    src: url(Raleway-VariableFont_wght.ttf);
+    font-weight: 469;
+}
+
+@font-face {
+    font-family: lazer84;
+    src: url(Lazer84.ttf);
+}
+
+@include mat.core();
+
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    background-color: #000222;
+    height: 100vh;
+    cursor: url('./assets/img/curseur1.png'), auto;
+}
+
+button:not(.bouton-icone, .bouton-retour) {
+    background-color: #dc0058;
+    box-shadow: 0px 0px 15px #ff2079;
+    color: #feadce;
+    border-radius: 10px;
+    border: 1.6px solid #ff87b7;
+    font-family: raleway;
+    transition-duration: 300ms;
+}
+
+button:hover:not(.bouton-icone, .bouton-retour) {
+    background-color: #ff2079;
+    color: white;
+    box-shadow: 0px 0px 40px #ff2079;
+    transition: 500ms;
+    border: 1.6px solid #edc9d7;
+    transition-duration: 300ms;
+}
+
+button:hover {
+    cursor: url('./assets/img/curseur1.png'), auto;
+}
+
+button:disabled {
+    background-color: #c9688f;
+    color: rgb(255, 206, 226);
+    box-shadow: none;
+    border: none;
+}
+
+button:disabled:hover {
+    background-color: #c9688f;
+    box-shadow: none;
+    border: none;
+}
+
+.bouton-icone {
+    font-size: 40px;
+    background: none;
+    background-color: inherit;
+    color: #e7e6e6;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.bouton-icone:hover:not(.outil) {
+    color: #ff2079;
+}
+
+.boutons-retour-action {
+    .bouton-retour {
+        margin-right: 2.6rem;
+        box-shadow: 0 0 0 black;
+        transition: all 0.2s;
+    }
+
+    .bouton-retour:hover, .bouton-action:hover {
+        box-shadow: 0.4rem 0.4rem 0 black;
+        transform: translate(-0.4rem, -0.4rem);
+    }
+
+    .bouton-retour:active, bouton-action:active {
+        box-shadow: 0 0 0 black;
+        transform: translate(0, 0);
+    }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

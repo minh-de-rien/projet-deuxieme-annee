@@ -1,0 +1,20 @@
+<div class="flex-display">
+    <app-barre-navigation titreDePage="Administration"></app-barre-navigation>
+    <app-navigateur-fiches class="flex-display" [administration]="true"></app-navigateur-fiches>
+    <section class="bouton-wrapper">
+        <mat-button-toggle-group>
+            <button mat-flat-button title="Créer votre jeu" id="boutonCreer" routerLink="/creation-jeu">
+                <mat-icon>add</mat-icon> Créer votre jeu
+            </button>
+            <button mat-flat-button title="Fixer vos constantes de temps" (click)="ouvrirChampBasFenetre()">
+                <mat-icon>more_time</mat-icon> Ajuster les constantes de temps
+            </button>
+            <button mat-flat-button title="Réinitialiser les meilleurs temps de tous les jeux" (click)="ouvrirModaleReinitialiserTemps()">
+                <mat-icon>redo</mat-icon> Réinitialiser les meilleurs temps
+            </button>
+            <button mat-flat-button title="Supprimer tous les jeux" (click)="ouvrirModaleSupprimerJeux()">
+                <mat-icon>delete</mat-icon> Supprimer tous les jeux
+            </button>
+        </mat-button-toggle-group>
+    </section>
+</div>

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "chai": "^4.3.6",
+    "eslint": "^8.24.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1"
+  }
+}

@@ -1,0 +1,17 @@
+<div class="zone-chat">
+    <div class="zone-messages">
+        <app-message *ngFor="let message of messages" [message]="message" [nomJoueurLocal]="joueur.nom"></app-message>
+    </div>
+    <!-- <div *ngIf="joueur && (joueur.estHote || joueur.estHote === false)" class="zone-contenant"> -->
+    <div *ngIf="joueur && !joueur.estSolo" class="zone-contenant">
+        <textarea
+            [(ngModel)]="texte"
+            class="zone-saisie"
+            maxlength="200"
+            #message
+            (keydown.enter)="envoyerMessage(message.value)"
+            placeholder="Ecris tes messages ici ..."
+        ></textarea>
+        <button class="bouton-envoi" (click)="envoyerMessage(message.value)">Envoyer</button>
+    </div>
+</div>

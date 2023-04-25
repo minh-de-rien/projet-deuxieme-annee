@@ -1,0 +1,124 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    height: auto;
+}
+
+.button {
+    text-align: center;
+    width: 100%;
+    height: 20%;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+}
+
+.server-message {
+    justify-content: center;
+    width: 100%;
+    min-width: min-content;
+}
+
+.logo {
+    height: 55px;
+}
+.titre-accueil {
+    display: flex;
+    justify-content: center;
+    font-family: lazer84;
+    color: white;
+    font-size: 100px;
+    position: relative;
+    padding-top: 170px;
+    place-items: center;
+    white-space: nowrap;
+}
+
+.bouton-accueil {
+    font-size: 20px;
+    margin-top: 17px;
+    padding: 10px;
+    width: 305px;
+    align-items: center;
+}
+.bouton-accueil:active {
+    font-size: 19px;
+    padding: 9px;
+    width: 290px;
+}
+.bouton-accueil:disabled:active {
+    font-size: 20px;
+    margin-top: 17px;
+    padding: 10px;
+    width: 305px;
+}
+
+.justified-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    #boutonModeClassique {
+        margin-top: 170px;
+    }
+}
+
+.flex-box-admin {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+}
+
+.bouton-admin {
+    align-items: center;
+}
+
+.team-name {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    color: #ff2079;
+    font-family: lazer84;
+}
+
+.footer-item {
+    font-family: raleway;
+    text-align: center;
+}
+.footer-item p :nth-child(even) {
+    color: #feadce;
+}
+.footer-item p :nth-child(odd) {
+    color: #ff87b7;
+}
+
+.fenetre-modale-wrapper {
+    display: none;
+}
+.fenetre-modale {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+}
+.fenetre-modale-corps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    margin: 250px;
+    width: 250px;
+    height: 100px;
+}

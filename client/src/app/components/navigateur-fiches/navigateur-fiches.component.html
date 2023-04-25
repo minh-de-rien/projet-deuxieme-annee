@@ -1,0 +1,13 @@
+<main>
+    <button class="material-icons fleche bouton-icone" [ngClass]="{ inactif: debutListe }" (click)="jeuxPrecedents()">arrow_back_ios</button>
+    <div class="fiches-container">
+        <app-fiche-jeu
+            *ngFor="let jeu of jeuxAffiches"
+            [jeu]="jeu"
+            [isAdministration]="administration"
+            (rechargerPage)="ngOnInit()"
+            class="fiche"
+        ></app-fiche-jeu>
+    </div>
+    <button class="material-icons fleche bouton-icone" [ngClass]="{ inactif: listeFinie }" (click)="jeuxSuivants()">arrow_forward_ios</button>
+</main>

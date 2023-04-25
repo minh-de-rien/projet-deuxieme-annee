@@ -1,0 +1,6 @@
+<div class="message">
+	<div *ngIf="verificationMessageExiste() && verificationServeur()" class="serveur">{{ message.contenu }}</div>
+	<div *ngIf="verificationMessageExiste() && verificationSoi()" class="joueur-local" >{{ message.contenu }}</div>
+	<div *ngIf="verificationMessageExiste() && verificationJoueurAutre()" class="joueur-autre">{{ message.contenu }}</div>
+	<div></div>
+</div>

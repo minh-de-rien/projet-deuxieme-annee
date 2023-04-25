@@ -1,0 +1,17 @@
+.message{
+	overflow-wrap: break-word;
+	
+	.joueur-local{
+	color: aliceblue;
+	font-size: 20px;
+	}
+	.joueur-autre{
+		color: rgb(0, 255, 255);
+		font-size: 20px;
+	}
+	.serveur{
+		color: red ;
+		font-size: 20px;
+	}
+}
+

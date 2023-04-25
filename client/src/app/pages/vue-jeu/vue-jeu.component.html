@@ -1,0 +1,62 @@
+<div class="page-entiere" *ngIf="jeu !== undefined">
+    <div class="zone-de-gauche">
+        <div class="infos-jeu">
+            <div class="conteneur-mode">
+                <h1 class="nom-mode" *ngIf="estModeClassique()">MODE CLASSIQUE</h1>
+                <h1 class="nom-mode" *ngIf="!estModeClassique()">MODE TEMPS LIMITÉ</h1>
+            </div>
+            <h1 class="nom-partie">{{ jeu.nom }}</h1>
+            <p>Nombre total de différences: {{ jeu.nombreDifferences }}</p>
+            <div *ngIf="estModeClassique()">
+                <table>
+                    <tr>
+                        <th>Joueur: {{ joueur.nom }}</th>
+                        <th *ngIf="!joueur.estSolo">Adversaire: {{ joueur.adversaire }}</th>
+                    </tr>
+                    <tr>
+                        <td>différences trouvées : {{ nombreDifferencesTrouvees }}</td>
+                        <td *ngIf="!joueur.estSolo">différences trouvées : {{ pointageAdversaire }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="!estModeClassique()">
+                <p style="margin: 0px">Joueur: {{ joueur.nom }}</p>
+                <p *ngIf="!joueur.estSolo">Coéquipier: {{ joueur.adversaire }}</p>
+            </div>
+            <p style="margin: 0px" *ngIf="joueur.estSolo">Pénalité d'indice: {{ valeurPenaliteDeTemps }} secondes</p>
+            <p style="margin: 0px" *ngIf="!estModeClassique()">Gain lors d'une découverte: {{ valeurGainDeTemps }} secondes</p>
+        </div>
+        <app-zone-messagerie class="chat-box" [joueur]="joueur" (click)="estPasDansZoneMessage = false"></app-zone-messagerie>
+    </div>
+    <div class="zone-de-droite" (click)="estPasDansZoneMessage = true">
+        <div class="timer-et-compteur">
+            <div>
+                <h2 *ngIf="estModeClassique()">IL RESTE {{ jeu.nombreDifferences - nombreDifferencesTrouvees - pointageAdversaire }} DIFFÉRENCES</h2>
+                <h2 *ngIf="!estModeClassique()">VOUS AVEZ TROUVÉ {{ nombreDifferencesTrouvees }} DIFFÉRENCES</h2>
+            </div>
+            <app-horloge
+                [finDePartie]="arretHorloge"
+                [tempsDeReference]="tempsDeReferencePourLeCompteur"
+                [valeurCompteARebour]="valeurDeDepartDuCompteur"
+                [modeJeu]="joueur.modeJeu"
+                [modificationDeTemps]="modificationDeTemps"
+                (finCompteARebours)="defaiteTempsLimite()"
+                (incrementationTemps)="miseAJourScore($event)"
+            ></app-horloge>
+        </div>
+        <div class="zone-jeu">
+            <div class="zone-image">
+                <app-zone-jeu class="zone-image" statut="canvasOriginal" [jeu]="jeu"></app-zone-jeu>
+                <app-zone-jeu class="zone-image" statut="canvasModifiee" [jeu]="jeu"></app-zone-jeu>
+            </div>
+            <div class="boutons-du-bas">
+                <div *ngIf="joueur.estSolo">
+                    <button (click)="demandeIndice()">Indices</button>
+                    <p>indices restants: {{ nombreIndicesRestants }}</p>
+                    <canvas id="canvasIndice" #canvasIndice [attr.width]="200" [attr.height]="200" hidden></canvas>
+                </div>
+                <div><button (click)="abandonner()">Abandonner</button></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="nav">
+    <button class="material-icons bouton-icone bouton-icone-maison" routerLink="home" title="Accueil">home</button>
+    <h1>{{ titreDePage }}</h1>
+    <div class="retour-administration">
+        <button
+            (mouseenter)="apparitionTexteRetour()"
+            (mouseleave)="enleverTexteRetour()"
+            (mousedown)="audioService.jouerSonClic()"
+            [ngClass]="{ boutonInactif: boutonRetourInactif() }"
+            class="bouton-icone material-icons bouton-retour-admin"
+            routerLink="/admin"
+        >
+            arrow_back
+        </button>
+        <span [ngClass]="{ boutonInactif: boutonRetourInactif() }" class="texte-message-retour" #texteRetour>Retour à la page d'administration</span>
+    </div>
+</div>
