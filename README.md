@@ -7,8 +7,8 @@ Projet de logiciel d'application Web
 [Nils Coulier](https://github.com/Ohdrak)  
 [Minh Ngoc Do](https://github.com/minh-de-rien)  
 [Jolan Le Clainche](https://github.com/JolanLec)  
-[Juliette Mathivet](https://github.com/Juliette-Mathivet) 
-[Kevin Peymani] (https://github.com/KevinPeymani) 
+[Juliette Mathivet](https://github.com/Juliette-Mathivet)
+[Kevin Peymani](https://github.com/KevinPeymani) 
 [Nemro Yapmi Nji Monluh]
 
 ---
@@ -24,7 +24,7 @@ Ce jeu permet aux joueurs de faire une partie à deux ou en solo et offre deux m
 
 ## Page d'accueil
 
-![Image montrant la page d'accuei]()
+![Image montrant la page d'accueil](https://github.com/minh-de-rien/projet-deuxieme-annee/blob/main/readme/page-accueil.png)
 
 C'est a première page qui s'affiche lorsqu'on accède au site web. À travers les boutons *Mode Classique*, *Mode temps limité* et *Administration*, elle permet d'orienter les joueurs vers le contenu souhaité.
 
@@ -42,7 +42,7 @@ En Temps Limité, l’objectif est de trouver une seule différence sur le plus 
 
 ## Administration 
 
-![Image montrant la page de création de jeu]()
+![Image montrant la page de création de jeu](https://github.com/minh-de-rien/projet-deuxieme-annee/blob/main/readme/page-creation-jeu.png)
 
 La vue d'administration, présentée de manière similaire à la vue de sélection de jeu, offre plusieurs fonctionnalités, telles que la suppression de jeux, la réinitialisation des temps établis par les meilleurs joueurs, ainsi que la possibilité de créer de nouveaux jeux. Cette création peut se faire en téléchargeant des images ou en utilisant les outils de dessin mis à disposition.
 
