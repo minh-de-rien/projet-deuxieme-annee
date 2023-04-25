@@ -17,28 +17,28 @@ Projet de logiciel d'application Web
 
 # Description
 
-Le but du projet est de développer une version web du jeu des sept différences, aussi appelé le jeu des sept erreurs. Le concept de ce jeu, que l’on peut parfois retrouver dans les pages d’un journal, est très simple. Deux images sont présentées : une originale et une modifiée. L’image modifiée comporte sept différences et le but est de toutes les identifier.
+L'objectif de ce projet consiste à élaborer une version web du célèbre jeu des sept différences, également connu sous le nom de jeu des sept erreurs. Ce jeu, souvent présenté dans les pages de journaux, met en scène deux images : une originale et une modifiée, avec sept différences à trouver dans cette dernière.
 
-Ce jeu permet aux joueurs de faire une partie à deux ou en solo et offre deux modes de jeu : Classique et Temps Limité. Divers paramètres de jeu sont configurables. Il est aussi possible de concevoir ses propres jeux. 
+Le jeu propose une expérience de jeu en solo ou en duo, avec deux modes de jeu distincts : Classique et Temps Limité. Les joueurs ont la possibilité de personnaliser différents paramètres de jeu selon leurs préférences. En outre, le jeu permet aux utilisateurs de créer et de personnaliser leurs propres jeux, offrant ainsi une expérience de jeu unique et personnalisée.
 
 
 ## Page d'accueil
 
 ![Image montrant la page d'accueil](https://github.com/minh-de-rien/projet-deuxieme-annee/blob/main/readme/page-accueil.png)
 
-C'est a première page qui s'affiche lorsqu'on accède au site web. À travers les boutons *Mode Classique*, *Mode temps limité* et *Administration*, elle permet d'orienter les joueurs vers le contenu souhaité.
+La page d'accueil du site web est la première interface visible par l'utilisateur lorsqu'il accède au site. Elle offre aux joueurs une orientation vers le contenu souhaité, en utilisant des boutons tels que *Mode Classique*, *Mode temps limité* et *Administration*. Ces boutons facilitent la navigation et l'accès aux fonctionnalités du site, permettant aux joueurs de découvrir rapidement les modes de jeu disponibles et les options de personnalisation.
 
 ## Mode classique
 
 ![Image montrant la page du mode classique]()
 
-En Classique, le but est de trouver rapidement toutes les différences lorsque l’on joue en solo. Dans une partie à deux, appelée le « un contre un », le but du joueur est d’atteindre un certain seuil de différences trouvées avant que son adversaire n’y parvienne.
+Dans le mode Classique, l'objectif consiste à trouver rapidement toutes les différences dans une partie en solo. En revanche, dans le mode multijoueur « Un contre Un », le joueur doit atteindre un certain seuil de différences trouvées avant son adversaire.
 
 ## Mode temps limité
 
 ![Image montrant la page du mode temps limité]()
 
-En Temps Limité, l’objectif est de trouver une seule différence sur le plus de paires d'images originale/modifiée possible qui sont présentées successivement. Dès qu’une différence est identifiée, on passe au duo suivant Les joueurs doivent agir rapidement avant qu’un compte à rebours n’expire. Contrairement au mode Classique, le jeu à deux en Temps Limité est de type coopératif.
+Dans le mode de jeu Temps Limité, l'objectif consiste à trouver une seule différence dans le plus grand nombre possible de paires d'images originale/modifiée qui sont présentées successivement. Une fois qu'une différence est identifiée, les joueurs passent automatiquement à la paire d'images suivante. Les joueurs doivent agir rapidement pour identifier les différences avant que le compte à rebours ne s'écoule. À la différence du mode Classique, le mode multijoueur Temps Limité est de type coopératif, les joueurs étant encouragés à collaborer pour améliorer leur score.
 
 ## Administration 
 
@@ -48,27 +48,27 @@ La vue d'administration, présentée de manière similaire à la vue de sélecti
 
 ## Outils de développement
 
--   Client : le site Web fait avec le cadriciel(_framework_) **Angular**.
+-   Client : le site Web est fait avec le cadriciel(_framework_) **Angular**.
 -   Serveur : le serveur dynamique bâti avec la librairie **NestJs**.
 
 -   SGDB : les données du jeu sont hébergées sur la base de données **MongoDB**.
--   Déploiement : Utilisation des services **GitLab Pages** et **AWS**.
+-   Déploiement : Les services **GitLab Pages** et **AWS** sont utilisés.
 
 ### Tests unitaires et couverture de code
 
-Les tests se retrouvent dans les fichiers `*.spec.ts` dans le code source des deux projets. Le client utilise la librairie _Jasmine_ et le serveur utilise _Mocha_, _Chai_, _Sinon_ et _Supertest_.
+Les tests se retrouvent dans les fichiers `*.spec.ts` dans les dossiers *client* et *server*. Le client utilise la librairie _Jasmine_ et le serveur utilise _Mocha_, _Chai_, _Sinon_ et _Supertest_.
 
 ### Linter et assurance qualité
 
-Le projet vient avec un ensemble de règles d'assurance qualité pour le code et son format. Les règles pour le linter sont disponibles dans le fichier `eslintrc.json` dans le dossier du client et du server.
+Le projet est livré avec un ensemble de règles pour l'assurance qualité du code et de son format, disponibles dans le fichier `eslintrc.json` dans les dossiers *client* et *server*.
 
 ### Intégration continue
 
-Ce projet a initialement été développé sur la plateforme GitLab et une configuration d'intégration continue (_Continuous Integration_ ou _CI_) a été appliquée pour celui-ci.
+Ce projet a initialement été développé et maintenu à travers la plateforme GitLab et une configuration d'intégration continue (_Continuous Integration_ ou _CI_) a été appliquée pour celui-ci.
 
-Cette configuration permet de lancer un pipeline de validations sur le projet en 4 étapes dans l'ordre suivant: _install_, _lint_, _build_ et _test_. Si une de ses étapes échoue, le pipeline est marqué comme échouée et une notification est visible sur GitLab.
+Cette configuration permet de lancer un pipeline de validations sur le projet en quatre (4) étapes dans l'ordre suivant: _install_, _lint_, _build_ et _test_. Si une de ces étapes échoue, le pipeline est marqué comme échoué et une notification est visible sur GitLab.
 
-Le pipeline est lancé suite aux 2 actions suivantes : lors d'un commit sur la branche master ou dans le cas d'une Merge Request (MR) entre 2 branches. Dans le cas d'une MR, chaque nouveau commit lancera un nouveau pipeline de validation.
+Le pipeline est lancé suite aux deux (2) actions suivantes : lors d'un commit sur la branche master ou dans le cas d'une Merge Request (MR) entre 2 branches. Dans le cas d'une MR, chaque nouveau commit lancera un nouveau pipeline de validation.
 
 ---
 Équipe 103  
