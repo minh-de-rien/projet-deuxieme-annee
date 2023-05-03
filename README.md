@@ -9,7 +9,7 @@ Projet de logiciel d'application Web
 [Jolan Le Clainche](https://github.com/JolanLec)  
 [Juliette Mathivet](https://github.com/Juliette-Mathivet)  
 [Kevin Peymani](https://github.com/KevinPeymani)  
-[Nemro Yapmi Nji Monluh]
+[Nemro Yapmi Nji Monluh](https://github.com/LepenseurN)
 
 ---
 
@@ -21,12 +21,11 @@ L'objectif de ce projet consiste à élaborer une version web du célèbre jeu d
 
 Le jeu propose une expérience de jeu en solo ou en duo, avec deux modes de jeu distincts : Classique et Temps Limité. Les joueurs ont la possibilité de personnaliser différents paramètres de jeu selon leurs préférences. En outre, le jeu permet aux utilisateurs de créer et de personnaliser leurs propres jeux, offrant ainsi une expérience de jeu unique et personnalisée.
 
-
 ## Page d'accueil
 
 ![Image montrant la page d'accueil](https://github.com/minh-de-rien/projet-deuxieme-annee/blob/main/readme/page-accueil.png)
 
-La page d'accueil du site web est la première interface visible par l'utilisateur lorsqu'il accède au site. Elle oriente les joueurs vers le contenu souhaité, en utilisant des boutons tels que *Mode Classique*, *Mode temps limité* et *Administration*. Ces boutons facilitent la navigation et l'accès aux fonctionnalités du site, permettant aux joueurs de découvrir rapidement les modes de jeu disponibles et les options de personnalisation.
+La page d'accueil du site web est la première interface visible par l'utilisateur lorsqu'il accède au site. Elle oriente les joueurs vers le contenu souhaité, en utilisant des boutons tels que _Mode Classique_, _Mode temps limité_ et _Administration_. Ces boutons facilitent la navigation et l'accès aux fonctionnalités du site, permettant aux joueurs de découvrir rapidement les modes de jeu disponibles et les options de personnalisation.
 
 ## Mode classique
 
@@ -40,7 +39,7 @@ Dans le mode Classique, l'objectif consiste à trouver rapidement toutes les dif
 
 Dans le mode de jeu Temps Limité, l'objectif consiste à trouver une seule différence dans le plus grand nombre possible de paires d'images originale/modifiée qui sont présentées successivement. Une fois qu'une différence est identifiée, les joueurs passent automatiquement à la paire d'images suivante. Les joueurs doivent agir rapidement pour identifier les différences avant que le compte à rebours ne s'écoule. À la différence du mode Classique, le mode multijoueur Temps Limité est de type coopératif, les joueurs étant encouragés à collaborer pour améliorer leur score.
 
-## Administration 
+## Administration
 
 ![Image montrant la page de création de jeu](https://github.com/minh-de-rien/projet-deuxieme-annee/blob/main/readme/page-creation-jeu.png)
 
@@ -56,11 +55,11 @@ La vue d'administration, présentée de manière similaire à la vue de sélecti
 
 ### Tests unitaires et couverture de code
 
-Les tests se retrouvent dans les fichiers `*.spec.ts` dans les dossiers *client* et *server*. Le client utilise la librairie _Jasmine_ et le serveur utilise _Mocha_, _Chai_, _Sinon_ et _Supertest_.
+Les tests se retrouvent dans les fichiers `*.spec.ts` dans les dossiers _client_ et _server_. Le client utilise la librairie _Jasmine_ et le serveur utilise _Mocha_, _Chai_, _Sinon_ et _Supertest_.
 
 ### Linter et assurance qualité
 
-Le projet est livré avec un ensemble de règles pour l'assurance qualité du code et de son format, disponibles dans le fichier `eslintrc.json` dans les dossiers *client* et *server*.
+Le projet est livré avec un ensemble de règles pour l'assurance qualité du code et de son format, disponibles dans le fichier `eslintrc.json` dans les dossiers _client_ et _server_.
 
 ### Intégration continue
 
@@ -71,5 +70,6 @@ Cette configuration permet de lancer un pipeline de validations sur le projet en
 Le pipeline est lancé suite aux deux (2) actions suivantes : lors d'un commit sur la branche master ou dans le cas d'une Merge Request (MR) entre 2 branches. Dans le cas d'une MR, chaque nouveau commit lancera un nouveau pipeline de validation.
 
 ---
+
 Équipe 103  
 5 décembre 2022
